@@ -1,5 +1,10 @@
+{% extends 'tecss/base.html' %}
+{% block content %}
 <form action="#" method="post">
     {% csrf_token %}
-    {{ form }}
+    <table>
+        {{ form }}
+    </table>
     <input type="submit" value="Submit" />
 </form>
+{% endblock %}
