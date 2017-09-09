@@ -1,0 +1,24 @@
+{% extends 'tecss/base.html' %}
+
+{% block content %}
+<h1> Customers <a class='btn btn-primary' href='new_customer'>New</a></h1>
+<table class='table table-striped'>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for customer in customer_list %}
+        <tr>
+            <th scope='row'>{{customer.businessId}}</th>
+            <td>{{customer.fullname}}</td>
+            <td>{{customer.email}}</td>
+        </tr>
+    {% endfor %}
+
+</table> 
+
+{% endblock %}

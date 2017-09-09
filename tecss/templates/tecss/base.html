@@ -1,6 +1,9 @@
 {% load staticfiles %}
+{% load tags %}
+
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tecss</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -9,6 +12,13 @@
         <div>
             <h1><a href="/">Tecss</a></h1>
         </div>
-        {% block content %}(no content){% endblock %}
+        <div class='container'>
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" class="{% active request home %}"><a href="#">Home</a></li>
+                <li role="presentation" class="{% active request customers %}"><a href="customers">Clientes</a></li>
+                <li role="presentation" class="{% active request data_sheets %}"><a href="#">Fichas tecnicas</a></li>
+            </ul>
+            {% block content %}(no content){% endblock %}
+        </div>
     </body>
 </html>

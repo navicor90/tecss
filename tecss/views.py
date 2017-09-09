@@ -1,12 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Customer
 from .forms import CustomerForm
 
-def customers(request):
-    latest_customers = Customer.objects.order_by('-businessId')[:5]
-    output = ', '.join(c.fullname for c in latest_customers)
-    return HttpResponse(output)
+def index(request):
+    return render(request, 'tecss/index.html')
 
 def newCustomer(request):
     print("hola campeon")
@@ -14,7 +12,7 @@ def newCustomer(request):
         form = CustomerForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('/thanks/')
+            return redirect('/tecss/customers') 
     else:
         form = CustomerForm()
     return render(request,'tecss/customer.html',{'form':form})
