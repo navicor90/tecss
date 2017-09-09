@@ -1,4 +1,5 @@
 
+staticfiles
 *.sqlite3
 /tecss/migrations/*
 # Byte-compiled / optimized / DLL files
