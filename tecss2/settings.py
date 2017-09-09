@@ -26,7 +26,7 @@ SECRET_KEY = '@=uj#$)24x_rs7ugb-_nb22u963w_rdn%@fn0c__!c#q7c2mbh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["tecsspy.herokuapp.com"]
+ALLOWED_HOSTS = ["tecsspy.herokuapp.com","127.0.0.1"]
 
 
 # Application definition
