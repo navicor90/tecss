@@ -18,6 +18,7 @@ class Customer(models.Model):
         self.businessId = top.businessId + 1
         super(Customer, self).save()
 
+
 #Tecnico
 class Operator(models.Model):
     businessId = models.IntegerField()
@@ -32,6 +33,7 @@ class Operator(models.Model):
         top = Operator.objects.order_by('-businessId')[0]
         self.businessId = top.businessId + 1
         super(Operator, self).save()
+
 
 #articulos
 class Item(models.Model):
@@ -49,11 +51,13 @@ class Item(models.Model):
         self.businessId = top.businessId + 1
         super(Item, self).save()
 
+
 class ItemInstance(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     serialNumber = models.CharField(max_length=200)
     additionalInfo = models.TextField()
+
 
 class DataSheetStatus(models.Model):
     businessId = models.IntegerField()

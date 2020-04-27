@@ -7,7 +7,7 @@ from .ListViews import CustomerListView
 urlpatterns = [ 
         url(r'^$', views.index, name='index'),
         url(r'^customers$', CustomerListView.as_view(), name='customers'),
-        url(r'^new_customer$', views.newCustomer, name='new_customer'),
-        url(r'^(?P<pk>\d+)/$', views.customerDetail, name='customer_detail'),
-        url(r'^(?P<pk>\d+)/items/$', views.customerItems, name='customer_items'),
+        url(r'^new_customer$', views.new_customer, name='new_customer'),
+        url(r'^(?P<pk>\d+)/$', views.customer_detail, name='customer_detail'),
+        url(r'^(?P<pk>\d+)/items/$', views.customer_items, name='customer_items'),
         ]
