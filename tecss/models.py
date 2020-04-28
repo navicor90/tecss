@@ -115,5 +115,3 @@ class Issue(models.Model):
         top = Issue.objects.order_by('-businessId')[0]
         self.businessId = top.businessId + 1
         super(Issue, self).save()
-
-

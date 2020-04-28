@@ -1,11 +1,22 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Customer
-from .forms import CustomerForm
+from .forms import CustomerForm, UploadFileForm
 
 
 def index(request):
     return render(request, 'tecss/index.html')
+
+
+def receipt_from_order(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(request.FILES['file'])
+            return HttpResponseRedirect('/success/url/')
+    else:
+        form = UploadFileForm()
+    return render(request, 'tecss/receipt_from_order.html', {'form': form})
 
 
 def new_customer(request):

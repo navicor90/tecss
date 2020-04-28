@@ -2,6 +2,7 @@ from django.views.generic.list import ListView
 from django.utils import timezone
 from .models import Customer
 
+
 class CustomerListView(ListView):
     model = Customer
 
